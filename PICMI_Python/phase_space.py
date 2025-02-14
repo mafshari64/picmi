@@ -1,51 +1,54 @@
-class PICMI_PhaseSpacePlugin:
+"""
+Classes following the PICMI standard
+These should be the base classes for Python implementation of the PICMI standard
+"""
+
+from .base import _ClassWithInit
+
+class PICMI_PhaseSpace(_ClassWithInit):
     """
-    Specifies the parameters for the Phase Space plugin in PIConGPU.
+    Specifies the parameters for the output of Phase Space of species such as electrons.
 
     This plugin extracts phase-space data from the simulation, allowing
     for detailed analysis of particle distributions in position-momentum space.
 
     Parameters
     ----------
-    phase_space_species_name: string
+    species: string
         Name of the particle species to track (e.g., "electron", "proton").
 
-    phase_space_period: int
+    period: int
         Number of simulation steps between consecutive outputs.
 
-    phase_space_space: string
+    spatial_coordinate: string
         Spatial coordinate used in phase space (e.g., 'x', 'y', 'z').
 
-    phase_space_momentum: string
+    momentum: string
         Momentum coordinate used in phase space (e.g., 'px', 'py', 'pz').
 
-    phase_space_min: float
+    min_momentum: float
         Minimum value for the phase-space coordinate range.
 
-    phase_space_max: float
+    max_momentum: float
         Maximum value for the phase-space coordinate range.
-
-    phase_space_filter: string
-        Filtering method applied to particles (e.g., "all", "energy_filter").
 
     name: string, optional
         Optional name for the phase-space plugin.
     """
 
-    def __init__(self, phase_space_species_name, phase_space_period,
-                 phase_space_space, phase_space_momentum,
-                 phase_space_min, phase_space_max,
-                 phase_space_filter, name=None, **kw):
+    def __init__(self, species, period,
+                 spatial_coordinate, momentum,
+                 min_momentum, max_momentum,
+                name=None, **kw):
         """
         Initialize the Phase Space Plugin parameters.
         """
-        self.phase_space_species_name = phase_space_species_name
-        self.phase_space_period = phase_space_period
-        self.phase_space_space = phase_space_space
-        self.phase_space_momentum = phase_space_momentum
-        self.phase_space_min = phase_space_min
-        self.phase_space_max = phase_space_max
-        self.phase_space_filter = phase_space_filter
+        self.species = species
+        self.period = period
+        self.spatial_coordinate = spatial_coordinate
+        self.momentum = momentum
+        self.min_momentum = min_momentum
+        self.max_momentum = max_momentum
         self.name = name
 
         self.handle_init(kw)
