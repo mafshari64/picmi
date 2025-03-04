@@ -8,3 +8,4 @@ from .interactions import *
 from .lasers import *
 from .particles import *
 from .simulation import *
+from .phase_space import *
