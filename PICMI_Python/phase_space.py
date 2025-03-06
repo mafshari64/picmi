@@ -19,6 +19,7 @@ class PICMI_PhaseSpace(_ClassWithInit):
 
     period: int
         Number of simulation steps between consecutive outputs.
+        Unit: steps (simulation time steps).
 
     spatial_coordinate: string
         Spatial coordinate used in phase space (e.g., 'x', 'y', 'z').
@@ -28,9 +29,11 @@ class PICMI_PhaseSpace(_ClassWithInit):
 
     min_momentum: float
         Minimum value for the phase-space coordinate range.
-
+        Unit: kg·m/s (momentum in SI units).
+  
     max_momentum: float
         Maximum value for the phase-space coordinate range.
+        Unit: kg·m/s (momentum in SI units).
 
     name: string, optional
         Optional name for the phase-space plugin.

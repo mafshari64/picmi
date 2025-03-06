@@ -19,15 +19,18 @@ class PICMI_EnergyHistogram(_ClassWithInit):
 
     period: int
         Number of simulation steps between consecutive histogram outputs.
+        Unit: steps (simulation time steps).
 
     bin_count: int
         Number of bins for the energy histogram.
 
     min_energy: float
         Minimum energy value for the histogram range (in eV or MeV, depending on the simulation).
-
+        Unit: Joules (J) 
+    
     max_energy: float
         Maximum energy value for the histogram range.
+        Unit: Joules (J) 
 
     name: string, optional
         Optional name for the energy histogram plugin.
