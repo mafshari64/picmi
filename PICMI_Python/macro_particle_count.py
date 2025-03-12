@@ -7,7 +7,7 @@ from .base import _ClassWithInit
 
 class PICMI_MacroParticleCount(_ClassWithInit):
     """
-    Specifies the parameters for counting macro particles of a given species.
+    Specifies the parameters for counting the total number of macro particles of a given species.
 
     This plugin counts the number of macro particles in the simulation,
     useful for tracking particle statistics and population dynamics.
