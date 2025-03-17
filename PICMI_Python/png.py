@@ -4,8 +4,9 @@ These should be the base classes for Python implementation of the PICMI standard
 """
 
 from .base import _ClassWithInit
+from typing import List
 
-class PICMI_PNG(_ClassWithInit):
+class PICMI_Png(_ClassWithInit):
     """
     Specifies the parameters for PNG output in PIConGPU.
 
@@ -91,10 +92,10 @@ class PICMI_PNG(_ClassWithInit):
 
     """
 
-    def __init__(self, data_list, period, axis, slice_point, folder_name, species, scale_image,
+    def __init__(self, data_list: List[str], period, axis, slice_point, folder_name, species, scale_image,
                  scale_to_cellsize, white_box_per_gpu,
                  em_field_scale_channel1, em_field_scale_channel2, em_field_scale_channel3,
-                 custom_normalization_si,
+                  custom_normalization_si: List[float],
                  pre_particle_density_opacity,
                  pre_channel1_opacity, pre_channel2_opacity, pre_channel3_opacity,
                  pre_particle_density_color_scales,
@@ -114,7 +115,7 @@ class PICMI_PNG(_ClassWithInit):
         self.em_field_scale_channel1 = em_field_scale_channel1
         self.em_field_scale_channel2 = em_field_scale_channel2
         self.em_field_scale_channel3 = em_field_scale_channel3
-        self.custom_normalization_si = custom_normalization_si or [0.0, 0.0, 0.0]
+        self.custom_normalization_si = custom_normalization_si
         self.pre_particle_density_opacity = pre_particle_density_opacity
         self.pre_channel1_opacity = pre_channel1_opacity
         self.pre_channel2_opacity = pre_channel2_opacity
