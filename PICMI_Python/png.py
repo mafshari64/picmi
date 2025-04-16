@@ -8,7 +8,7 @@ from typing import List
 
 class PICMI_Png(_ClassWithInit):
     """
-    Specifies the parameters for PNG output in PIConGPU.
+    Specifies the parameters for PNG output.
 
     This plugin generates 2D PNG images of field and particle data.
 
